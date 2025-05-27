@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mandu_3
   m_EditorClassIdentifier: 
   manduName: WangMandu
-  holdCount: 0
+  holdCount: 10
   level: 3

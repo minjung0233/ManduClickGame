@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mandu_2
   m_EditorClassIdentifier: 
   manduName: BaoMandu
-  holdCount: 0
+  holdCount: 5
   level: 2

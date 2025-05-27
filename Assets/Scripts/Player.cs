@@ -38,10 +38,4 @@ public class Player : MonoBehaviour
         }
     }
 
-    // 가져오기
-    public void GetSaveData()
-    {
-        //playerID = DataManager.instance.saveData.id;
-    }
-
 }

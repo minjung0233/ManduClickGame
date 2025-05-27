@@ -1,16 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance;
 
-    public int Money { get; set; }
+    public int Money;               //보유 돈
 
-    public Mandu[] manduList; // ScriptableObject 배열로
+    public Mandu[] manduList;       // 보유 만두 (ScriptableObject 배열로)
 
-    public int ManduClickLevel;
+    public int ManduClickLevel;     // 만두 클릭 레벨
 
     void Awake()
     {
@@ -47,10 +49,18 @@ public class PlayerData : MonoBehaviour
                 manduList[0].holdCount += 1;
                 return 1;
         }
-        randNum = Random.Range(min, max);
+        randNum = UnityEngine.Random.Range(min, max);
         manduList[0].holdCount += randNum;
 
         return randNum;
 
+    }
+
+    // 가져온 데이터 저장
+    public void GetSaveData()
+    {
+        Money = DataManager.instance.nowPlayerData.Money;
+        manduList = DataManager.instance.nowPlayerData.manduList;
+        ManduClickLevel = DataManager.instance.nowPlayerData.ManduClickLevel;
     }
 }
