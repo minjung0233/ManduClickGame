@@ -30,7 +30,7 @@ ManduClickGame은 이름 그대로 만두를 클릭하면 추가되는 만두 �
 <h1>구현해야할 기능</h1>
 
 <h5>1. 게임 시작 씬 추가</h5>
-<h5>2. 플레이어의 데이터를 Json 형태로 저장</h5>
+<h5>2. 플레이어의 데이터를 Json 형태로 저장(2025.05.28[완])</h5>
 <h5>3. 사운드 추가</h5>
 
 > * 클릭 사운드
@@ -40,3 +40,28 @@ ManduClickGame은 이름 그대로 만두를 클릭하면 추가되는 만두 �
 
 > * ManduClickLevel 레벨업
 > * (하고싶긴한데..) ManduAutomaticLevel 레벨업
+
+----
+
+<h1>Debug List and solution</h1>
+
+<h5>1. 정렬화, 역정렬화 문제(2025.05.28)</h5>
+
+> * log
+>> * ArgumentException: Cannot deserialize JSON to new instances of type 'PlayerData.'
+
+> * 상황 설명
+>> * PlayerData를 Json파일로 변화하여 저장하는 것까진 잘 실행되었으나 다시 PlayerData에 넣으려 하면 오류가 발생
+>> * Unity JSON Utilty는 이중배열 변환을 지원 X, Newtonsoft.Jsonxs은 지원
+solution : <https://ojui.tistory.com/90>
+
+<h1>Debug List and solution</h1>
+
+<h5>디버그X 걍 문제점 만두 스크립트오브젝트 인스턴스화 필요(2025.05.28)</h5>
+
+> * log
+>> * Mandu must be instantiated using the ScriptableObject.CreateInstance method instead of new Mandu.
+
+> * 상황 설명
+>> * manduList 부분의 키와 값이 이상함
+>> * {"Money":0,"manduList":[{"instanceID":24922},{"instanceID":24958},{"instanceID":24946}],"ManduClickLevel":0}
