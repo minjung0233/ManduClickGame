@@ -383,8 +383,10 @@
 "Assets/Scripts/DataManager.cs"
 "Assets/Scripts/Mandu.cs"
 "Assets/Scripts/ManduGameControl.cs"
+"Assets/Scripts/ManduSaveData.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerData.cs"
+"Assets/Scripts/SaveData.cs"
 -langversion:9.0
 
 /deterministic

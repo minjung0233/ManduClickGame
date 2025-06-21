@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,13 +7,10 @@ using UnityEngine;
 [Serializable]
 public class PlayerData : MonoBehaviour
 {
-    public static PlayerData instance;
-
     public int Money;               //보유 돈
-
-    public Mandu[] manduList;       // 보유 만두 (ScriptableObject 배열로)
-
     public int ManduClickLevel;     // 만두 클릭 레벨
+    public List<ManduSaveData> manduList;       // 보유 만두 (ScriptableObject 배열로)
+    public static PlayerData instance;
 
     void Awake()
     {
@@ -55,12 +53,24 @@ public class PlayerData : MonoBehaviour
         return randNum;
 
     }
-
+    
     // 가져온 데이터 저장
-    public void GetSaveData()
+    public void SetterSaveData(SaveData saveData)
     {
-        Money = DataManager.instance.nowPlayerData.Money;
-        manduList = DataManager.instance.nowPlayerData.manduList;
-        ManduClickLevel = DataManager.instance.nowPlayerData.ManduClickLevel;
+        Money = saveData.Money;
+        manduList = saveData.manduList;
+        ManduClickLevel = saveData.ManduClickLevel;
+    }
+    
+    // 현재 데이터 저장
+    public SaveData GetSaveData()
+    {
+        return new SaveData
+        {
+            Money = Money,
+            manduList = manduList,
+            ManduClickLevel = ManduClickLevel,
+        };
+        
     }
 }

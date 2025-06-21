@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewMandu", menuName = "Mandu Data")]
+[System.Serializable]
 public class Mandu : ScriptableObject
 {
     public string manduName;   // 만두 이름

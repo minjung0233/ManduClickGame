@@ -1124,7 +1124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcfd78e4fadef241b785273b7047762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowPlayerData: {fileID: 2116726622}
 --- !u!114 &1684373906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,7 +1270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcfd78e4fadef241b785273b7047762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowPlayerData: {fileID: 2116726622}
 --- !u!114 &1882816480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,12 +1527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37df8377c3809184e843e11cf0387e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 0
+  Money: 10
+  ManduClickLevel: 1
   manduList:
   - {fileID: 11400000, guid: b5a96b2c568dd8d44bb5e24ba5e5acc6, type: 2}
   - {fileID: 11400000, guid: 6aa3e73706d87d24c9bc684f2ce34d00, type: 2}
   - {fileID: 11400000, guid: becfed7db769d754faba4a110c103701, type: 2}
-  ManduClickLevel: 0
 --- !u!4 &2116726623
 Transform:
   m_ObjectHideFlags: 0
